@@ -14,7 +14,8 @@
   --color-main: #4f5955;
   --color-text: #535656;
   --color-note: #9C9EA6;
-  --color-border: #EAEAEA;
+  --color-border: #eaeaea;
+  --color-topbar-border: #606966;
   --color-sub-primary: #f2eddc;
   --color-sub-secondary: #d9c3a9;
 }
@@ -286,5 +287,34 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--color-note);
     font-size: 13px;
     padding: 0 0 1rem 1rem;
+  }
+}
+
+/* Partials */
+
+.topbar {
+  background-color: var(--color-main);
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p {
+    color: var(--color-surface-primary);
+    font-size: 13px;
+  }
+
+  a {
+    color: var(--color-surface-primary);
+    font-size: 13px;
+    text-decoration: none;
+    padding: 1rem;
+    border-left: var(--color-topbar-border) 1px solid;
+  }
+  
+  a:last-child {
+    border-right: var(--color-topbar-border) 1px solid;
   }
 }
