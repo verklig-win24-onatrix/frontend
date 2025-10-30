@@ -318,3 +318,45 @@ h1, h2, h3, h4, h5, h6, p {
     border-right: var(--color-topbar-border) 1px solid;
   }
 }
+
+header {
+  position: relative;
+  z-index: 999;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+
+  .flex {
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .nav-list {
+    list-style: none;
+    gap: 75px;
+    margin: 0;
+    padding: 1.5rem;
+
+    .nav-link {
+      color: var(--color-main);
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 300ms ease-in-out;
+
+      &:hover {
+        color: var(--color-sub-secondary);
+      }
+    }
+  }
+
+  .current .nav-link {
+    color: var(--color-sub-secondary);
+    border-bottom: var(--color-sub-secondary) 2px solid;
+  }
+
+  .fa-magnifying-glass {
+    color: var(--color-main);
+    font-size: 18px;
+  }
+}
