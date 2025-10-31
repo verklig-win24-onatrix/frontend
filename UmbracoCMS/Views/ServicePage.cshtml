@@ -4,4 +4,6 @@
 	Layout = "MainLayout.cshtml";
 }
 
+<partial name="Partials/Layout/_Banner" model="(IPageBanner)Model" />
+
 @Html.GetBlockListHtml(Model.Sections)
