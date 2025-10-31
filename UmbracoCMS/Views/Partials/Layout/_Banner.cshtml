@@ -1,0 +1,48 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPageBanner>
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+  var homePageDisplayName = "Home";
+  var selection = Model.Ancestors().ToArray();
+  var isFirstItem = true;
+}
+
+<section class="banner-section">
+  <div class="flex">
+
+    <h1>@Model.PageTitle</h1>
+
+    <div>
+      @if (selection?.Length > 0)
+      {
+        <ul class="breadcrumb">
+
+          @foreach (var item in selection.OrderBy(x => x.Level))
+          {
+            var displayName = isFirstItem ? homePageDisplayName : item.Name;
+            
+            <li>
+              <a href="@item.Url(PublishedUrlProvider)">@displayName</a>
+              <span class="divider">></span>
+            </li>
+
+            isFirstItem = false;
+          }
+
+          <li class="current">@Model.Name</li>
+          
+        </ul>
+      }
+    </div>
+
+    <img class="globe-left" src="~/media/lape4cnj/globe-left.svg">
+    <img class="globe-right" src="~/media/u4mnkvnc/globe-right.svg">
+
+  </div>
+</section>
