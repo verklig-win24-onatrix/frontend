@@ -4,8 +4,14 @@
   var content = (ContentModels.ServiceSection)Model.Content;
   var settings = Model.Settings as ContentModels.ServiceSettings;
 
+  var current = Umbraco.AssignedContentItem;
+  var siteRoot = current.Root();
+
+  var servicePage = siteRoot.Children<ServicePage>().FirstOrDefault();
+  var items = servicePage.Children<ServiceDetail>().OrderByDescending(x => x.CreateDate).ToList() ?? [];
+
   var sectionColor = settings.BackgroundColor.Color;
-  string sectionColorStyle = string.Empty;
+  var sectionColorStyle = string.Empty;
 
   if (sectionColor != null)
   {
@@ -25,13 +31,25 @@
     </div>
 
     <div class="grid">
-      <div class="service-card">
-        <a href="">
-          <h4>Risk Management</h4>
-          <img src="~/media/mmtblymm/risk-management.svg" />
-          <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
-        </a>
-      </div>
+
+      @if (items.Any())
+      {
+        foreach(var item in items)
+        {
+          <div class="service-card">
+            <a href="@item.Url()">
+              <h4>@item.Name</h4>
+              <img src="@item.ServiceDetailThumbnail.Url()" />
+              <p>@item.ServiceDetailExcerpt</p>
+            </a>
+          </div>
+        }
+      }
+      else
+      {
+        <p>No Services Available</p>
+      }
+
     </div>
 
   </div>
