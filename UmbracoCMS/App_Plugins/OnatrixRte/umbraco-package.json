@@ -1,0 +1,244 @@
+{
+  "name": "Onatrix Rte",
+  "alias": "Onatrix.Rte",
+  "extensions": [
+    {
+      "type": "tiptapToolbarExtension",
+      "kind": "styleMenu",
+      "alias": "Onatrix.Tiptap.StyleMenu",
+      "name": "Onatrix Tiptap Style Menu",
+      "meta": {
+        "alias": "OnatrixStyleMenu",
+        "icon": "icon-palette",
+        "label": "Onatrix Styles"
+      },
+      "items": [
+        {
+          "label": "Paragraphs",
+          "items": [
+            {
+              "label": "XL - 70",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xl font-light",
+                    "style": "rte-xl-light"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Normal",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xl font-regular",
+                    "style": "rte-xl-regular"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xl font-bold",
+                    "style": "rte-xl-bold"
+                  },
+                  "appearance": {}
+                }
+              ]
+            },
+            {
+              "label": "L - 40",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-lg font-light",
+                    "style": "rte-lg-light"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Normal",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-lg font-regular",
+                    "style": "rte-lg-regular"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-lg font-bold",
+                    "style": "rte-lg-bold"
+                  },
+                  "appearance": {}
+                }
+              ]
+            },
+            {
+              "label": "M - 20",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-md font-light",
+                    "style": "rte-md-light"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Normal",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-md font-regular",
+                    "style": "rte-md-regular"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-md font-bold",
+                    "style": "rte-md-bold"
+                  },
+                  "appearance": {}
+                }
+              ]
+            },
+            {
+              "label": "S - 16",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-sm font-light",
+                    "style": "rte-sm-light"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Normal",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-sm font-regular",
+                    "style": "rte-sm-regular"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-sm font-bold",
+                    "style": "rte-sm-bold"
+                  },
+                  "appearance": {}
+                }
+              ]
+            },
+            {
+              "label": "XS - 14",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xs font-light",
+                    "style": "rte-xs-light"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Normal",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xs font-regular",
+                    "style": "rte-xs-regular"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xs font-bold",
+                    "style": "rte-xs-bold"
+                  },
+                  "appearance": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Bullets",
+          "data": {
+            "tag": "ul",
+            "class": "rte-ul"
+          }
+        }
+      ]
+    },
+    {
+      "type": "tiptapToolbarExtension",
+      "kind": "styleMenu",
+      "alias": "Onatrix.Tiptap.BrandColors",
+      "name": "Onatrix Brand Colors",
+      "meta": {
+        "alias": "OnatrixBrandColors",
+        "icon": "icon-palette",
+        "label": "Onatrix Colors"
+      },
+      "items": [
+        {
+          "label": "Main",
+          "data": {
+            "tag": "span",
+            "class": "text-main"
+          },
+          "appearance": { "style": "background-color:#4f5955; color:#fff; padding:5px" }
+        },
+        {
+          "label": "Normal",
+          "data": {
+            "tag": "span",
+            "class": "text-normal"
+          },
+          "appearance": { "style": "background-color:#535656; color:#fff; padding:5px" }
+        },
+        {
+          "label": "Note",
+          "data": {
+            "tag": "span",
+            "class": "text-note"
+          },
+          "appearance": { "style": "background-color:#9c9ea6; color:#fff; padding:5px" }
+        },
+        {
+          "label": "Sub Primary",
+          "data": {
+            "tag": "span",
+            "class": "text-sub-primary"
+          },
+          "appearance": { "style": "background-color:#f2eddc; color:#fff; padding:5px" }
+        },
+        {
+          "label": "Sub Secondary",
+          "data": {
+            "tag": "span",
+            "class": "text-sub-secondary"
+          },
+          "appearance": { "style": "background-color:#d9c3a9; color:#fff; padding:5px" }
+        }
+      ]
+    }
+  ]
+}
