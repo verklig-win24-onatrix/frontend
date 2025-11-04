@@ -11,12 +11,9 @@
   var items = servicePage.Children<ServiceDetail>().OrderByDescending(x => x.CreateDate).ToList() ?? [];
 
   var sectionColor = settings.BackgroundColor.Color;
-  var sectionColorStyle = string.Empty;
-
-  if (sectionColor != null)
-  {
-    sectionColorStyle = $"background-color: {@sectionColor} !important;";
-  }
+  var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
+    ? $"background-color: {sectionColor} !important;"
+    : string.Empty;
 }
 
 <section class="service-section" style="@sectionColorStyle">
