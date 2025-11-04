@@ -6,23 +6,24 @@
 
 <section class="hero-section">
 
-	<div class="bg-image">
-		@if (content.HeroBgImage != null)
-		{
-			<img src="@content.HeroBgImage.Url()" />
-		}
-	</div>
+	@if (content.HeroBackgroundImage != null)
+	{
+		<img src="@content.HeroBackgroundImage.Url()" />
+	}
 
 	<div class="wrapper">
 		<div class="container">
 			<div class="flex">
+
 				<h1>@content.HeroTitle</h1>
+
 				<div class="rte">@Html.Raw(content.HeroText)</div>
 
 				@if (content.HeroLink != null)
 				{
 					<a href="@content.HeroLink.Url">@content.HeroLink.Name</a>	
 				}
+
 			</div>
 		</div>
 	</div>
