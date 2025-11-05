@@ -485,6 +485,43 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.our-story-section {
+  position: relative;
+  padding-top: 6rem;
+
+  .flex {
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .rte {
+    width: 650px;
+    z-index: 999;
+  }
+
+  .text-rte-sm {
+    margin: .5rem 0 1.5rem 0;
+  }
+
+  .btn {
+    z-index: 999;
+  }
+  
+  .globe {
+    position: absolute; 
+    object-fit: fill;
+    width: 1200px;
+    height: auto;
+    top: 9.5rem;
+  }
+
+  .people {
+    z-index: 999;
+    margin-top: 3rem;
+    width: 1210px;
+  }
+}
+
 /* Partials */
 
 .topbar {
