@@ -105,6 +105,17 @@ img {
   object-fit: cover;
 }
 
+.btn {
+  color: var(--color-sub-primary);
+  background-color: var(--color-main);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+}
+
 /* Typography */
 
 h1, h2, h3, h4, h5, h6, p {
@@ -220,17 +231,6 @@ h1, h2, h3, h4, h5, h6, p {
       color: var(--color-main);
       margin: 1rem 0 1rem 0;
     }
-
-    a {
-      color: var(--color-sub-primary);
-      background-color: var(--color-main);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      border-radius: 3px;
-      cursor: pointer;
-      padding: 1rem 2.5rem;
-    }
   }
 
   .flex {
@@ -246,8 +246,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .service-section {
-  padding: 4rem 0 4rem 0;
   background-color: var(--color-surface-secondary);
+  padding: 4rem 0 4rem 0;
 
   .service-card {
     background-color: var(--color-surface-primary);
@@ -374,6 +374,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .service-detail-section {
+  background-color: var(--color-surface-primary);
   padding: 5rem 0 5rem 0;
 
   .grid {
@@ -397,10 +398,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .contact-section {
-
-  .flex {
-    
-  }
+  background-color: var(--color-surface-primary);
 
   .container {
     padding: 10rem 0 10rem 7rem;
@@ -452,6 +450,38 @@ h1, h2, h3, h4, h5, h6, p {
   .phone,
   .email {
     font-style: italic;
+  }
+}
+
+.about-callback-section {
+  background-color: var(--color-surface-primary);
+  padding: 8rem 0 8rem 0;
+
+  .container {
+    width: 670px;
+  }
+
+  h2 {
+    color: var(--color-sub-secondary);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .text-rte-lg {
+    padding-bottom: 1rem;
+  }
+
+  img {
+    object-fit: none;
+    width: 160px;
+    height: 80px;
+    margin: 1rem 0 .5rem 0;
+  }
+
+  .signature {
+    color: var(--color-text);
+    font-size: 14px;
   }
 }
 
