@@ -1,0 +1,27 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+  var content = (ContentModels.OurStorySection)Model.Content;
+  var settings = Model.Settings as ContentModels.OurStorySettings;
+
+  var sectionColor = settings.BackgroundColor.Color;
+  var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
+    ? $"background-color: {sectionColor} !important;"
+    : string.Empty;
+}
+
+<section class="our-story-section" style="@sectionColorStyle">
+  <div class="wrapper">
+    <div class="flex">
+
+      <div class="rte">@Html.Raw(content.OurStoryBody)</div>
+
+      <a class="btn" href="@content.OurStoryLink.Url">@content.OurStoryLink.Name</a>
+
+      <img class="globe" src="@content.OurStoryBackgroundImage1.Url()" />
+
+      <img class="people" src="@content.OurStoryBackgroundImage2.Url()" />
+
+    </div>
+  </div>
+</section>
