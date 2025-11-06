@@ -529,6 +529,7 @@ h1, h2, h3, h4, h5, h6, p {
 .success-story-section {
   background-color: var(--color-surface-primary);
   padding: 6rem 0 28rem 0;
+  margin-bottom: 11rem;
   position: relative;
 
   .container {
@@ -585,6 +586,27 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     justify-self: center;
     align-self: center;
+  }
+}
+
+.brands-section {
+  background-color: var(--color-surface-primary);
+  padding: 6rem 0 6rem 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo {
+    width: 170px;
+    height: 70px;
+  }
+
+  img {
+    object-fit: none;
   }
 }
 
