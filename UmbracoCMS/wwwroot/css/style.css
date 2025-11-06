@@ -610,6 +610,32 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.about-founder-section {
+  background-color: var(--color-surface-primary);
+  padding: 8rem 0 10rem 0;
+
+  .grid {
+    grid-template-columns: min-content auto;
+    align-items: start;
+    gap: 3rem;
+  }
+
+  .profile {
+    justify-self: start;
+
+    span {
+      display: block;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+  }
+
+  img {
+    width: 400px;
+    height: 570px;
+  }
+}
+
 /* Partials */
 
 .topbar {
