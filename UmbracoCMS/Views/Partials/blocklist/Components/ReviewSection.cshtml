@@ -1,0 +1,41 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+  var content = (ContentModels.ReviewSection)Model.Content;
+  var settings = Model.Settings as ContentModels.ReviewSettings;
+
+  var sectionColor = settings?.BackgroundColor?.Color ?? string.Empty;
+  var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
+    ? $"background-color: {sectionColor} !important;"
+    : string.Empty;
+}
+
+<section class="review-section" style="@sectionColorStyle">
+  <div class="wrapper flex">
+
+    <div class="container">
+
+      <h2>@content.ReviewLabel</h2>
+
+      <div class="rte">@Html.Raw(content.ReviewBody)</div>
+
+      <div class="stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+
+      <p class="name">@content.ReviewName</p>
+
+      <p class="company">@content.ReviewCompany</p>
+
+    </div>
+
+    <div class="image">
+      <img src="@content.ReviewImage.Url()" />
+    </div>
+
+  </div>
+</section>
