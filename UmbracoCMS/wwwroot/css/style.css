@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .team-section {
   background-color: var(--color-surface-primary);
-  padding: 4rem 0 4rem 0;
+  padding: 6rem 0 4rem 0;
 
   .member-card {
     background-color: var(--color-surface-primary);
@@ -633,6 +633,62 @@ h1, h2, h3, h4, h5, h6, p {
   img {
     width: 400px;
     height: 570px;
+  }
+}
+
+.review-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 520px;
+
+  .wrapper {
+    padding: 0 0 0 375px;
+  }
+
+  .flex {
+    gap: 6rem;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .container {
+    width: 580px;
+  }
+
+  .image {
+    position: absolute;
+    left: 63rem;
+    height: 520px;
+  }
+
+  .stars {
+    color: var(--color-text);
+    font-size: 12px;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .name {
+    color: var(--color-text);
+    font-size: 14px;
+  }
+
+  .company {
+    color: var(--color-text);
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  h2 {
+    color: var(--color-sub-secondary);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+  }
+
+  .rte p:first-child{
+    line-height: 1.5rem;
   }
 }
 
