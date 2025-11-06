@@ -1,0 +1,49 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+  var content = (ContentModels.SuccessStorySection)Model.Content;
+  var settings = Model.Settings as ContentModels.SuccessStorySettings;
+
+  var sectionColor = settings?.BackgroundColor?.Color ?? string.Empty;
+  var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
+    ? $"background-color: {sectionColor} !important;"
+    : string.Empty;
+}
+
+<section class="success-story-section" style="@sectionColorStyle">
+  <div class="wrapper">
+
+    <div class="flex">
+      <h2>@content.SuccessStoryLabel</h2>
+      <div class="rte">@Html.Raw(content.SuccessStoryTitle)</div>
+    </div>
+
+    <div class="container">
+
+      <div class="flex">
+        <p class="amount">@content.SuccessStoryAmount1</p>
+        <span class="details">@content.SuccessStoryDetails1</span>
+      </div>
+
+      <div class="flex">
+        <p class="amount">@content.SuccessStoryAmount2</p>
+        <span class="details">@content.SuccessStoryDetails2</span>
+      </div>
+
+      <div class="flex">
+        <p class="amount">@content.SuccessStoryAmount3</p>
+        <span class="details">@content.SuccessStoryDetails3</span>
+      </div>
+
+    </div>
+
+    <div class="image">
+      <img src="@content.SuccessStoryImage.Url()" />
+    </div>
+
+    <div class="background-image">
+      <img src="@content.SuccessStoryBackgroundImage.Url()" />
+    </div>
+
+  </div>
+</section>

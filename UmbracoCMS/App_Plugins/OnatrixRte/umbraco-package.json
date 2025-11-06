@@ -199,6 +199,14 @@
       },
       "items": [
         {
+          "label": "White",
+          "data": {
+            "tag": "span",
+            "class": "text-white"
+          },
+          "appearance": { "style": "background-color:#fff; color:#535656; padding:5px" }
+        },
+        {
           "label": "Main",
           "data": {
             "tag": "span",

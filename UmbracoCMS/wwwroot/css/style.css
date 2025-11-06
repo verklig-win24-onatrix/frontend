@@ -154,6 +154,10 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: 700;
 }
 
+.text-white {
+  color: #fff;
+}
+
 .text-main {
   color: #4f5955;
 }
@@ -519,6 +523,68 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 999;
     margin-top: 3rem;
     width: 1210px;
+  }
+}
+
+.success-story-section {
+  background-color: var(--color-surface-primary);
+  padding: 6rem 0 28rem 0;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.5rem;
+
+    .flex {
+      flex-direction: column;
+      width: 320px;
+    }
+  }
+
+  .flex {
+    flex-direction: column;
+    z-index: 999;
+  }
+
+  h2 {
+    color: var(--color-sub-secondary);
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .rte {
+    color: var(--color-main);
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .amount {
+    color: var(--color-sub-secondary);
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 8rem;
+  }
+
+  .details {
+    color: var(--color-surface-primary);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .image {
+    position: absolute;
+    justify-self: center;
+    z-index: 999;
+    padding-top: 5rem;
+  }
+
+  .background-image {
+    position: absolute;
+    justify-self: center;
+    align-self: center;
   }
 }
 
