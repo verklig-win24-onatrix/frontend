@@ -10,7 +10,7 @@
   var servicePage = siteRoot.Children<ServicePage>().FirstOrDefault();
   var items = servicePage.Children<ServiceDetail>().OrderByDescending(x => x.CreateDate).ToList() ?? [];
 
-  var sectionColor = settings.BackgroundColor.Color;
+  var sectionColor = settings?.BackgroundColor?.Color ?? string.Empty;
   var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
     ? $"background-color: {sectionColor} !important;"
     : string.Empty;
