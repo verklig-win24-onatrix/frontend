@@ -7,7 +7,7 @@
 	var rootContent = Umbraco.ContentAtRoot();
 	var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
 
-	var sectionColor = settings.BackgroundColor.Color;
+  var sectionColor = settings?.BackgroundColor?.Color ?? string.Empty;
   var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
     ? $"background-color: {sectionColor} !important;"
     : string.Empty;

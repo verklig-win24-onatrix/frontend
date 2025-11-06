@@ -4,7 +4,7 @@
   var content = (ContentModels.OurStorySection)Model.Content;
   var settings = Model.Settings as ContentModels.OurStorySettings;
 
-  var sectionColor = settings.BackgroundColor.Color;
+  var sectionColor = settings?.BackgroundColor?.Color ?? string.Empty;
   var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
     ? $"background-color: {sectionColor} !important;"
     : string.Empty;
