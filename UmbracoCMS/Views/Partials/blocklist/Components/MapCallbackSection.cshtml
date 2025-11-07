@@ -1,0 +1,13 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+  var content = (ContentModels.MapCallbackSection)Model.Content;
+}
+
+<section class="map-callback-section">
+
+  <div class="background-image">
+    <img src="@content.MapCallbackBackgroundImage.Url()" />
+  </div>
+
+</section>
