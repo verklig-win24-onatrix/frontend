@@ -692,6 +692,13 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.map-callback-section {
+  .background-image {
+    width: 1920px;
+    height: 748px;
+  }
+}
+
 /* Partials */
 
 .topbar {
