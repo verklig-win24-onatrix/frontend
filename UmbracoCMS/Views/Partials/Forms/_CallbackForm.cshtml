@@ -1,0 +1,65 @@
+@using UmbracoCMS.ViewModels
+@model CallbackFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "callbackForm"}))
+{
+  <div class="form">
+
+    <div>
+      <label asp-for="Name" class="hidden"></label>
+      <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" class="input-field" />
+      <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+      <label asp-for="Email" class="hidden"></label>
+      <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="input-field" />
+      <span asp-validation-for="Email"></span>
+    </div>
+
+    <div>
+      <label asp-for="Phone" class="hidden"></label>
+      <input asp-for="Phone" type="text" placeholder="@Html.DisplayNameFor(x => x.Phone)" class="input-field" />
+      <span asp-validation-for="Phone"></span>
+    </div>
+
+    <div>
+      <label asp-for="SelectedOption" class="hidden"></label>
+
+      <div class="dropdown">
+        <select asp-for="SelectedOption">
+          <option value="" selected disabled hidden>Select an option</option>
+
+          @foreach (var option in Model.Options)
+          {
+            <option value="@option">@option</option>
+          }
+        </select>
+
+        <span class="dropdown-icon">
+          <i class="fa-solid fa-angle-down"></i>
+        </span>
+      </div>
+
+      <span asp-validation-for="SelectedOption"></span>
+    </div>
+
+    <div>
+      <button type="submit" class="form-btn">Submit</button>
+    </div>
+
+    @if (TempData["FormError"] != null)
+    {
+      <div class="form-error">
+        @TempData["FormError"]
+      </div>
+    }
+    else if (TempData["FormSuccess"] != null)
+    {
+      <div class="form-success">
+        @TempData["FormSuccess"]
+      </div>
+    }
+
+  </div>
+}
