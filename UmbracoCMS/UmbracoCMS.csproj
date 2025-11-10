@@ -27,4 +27,9 @@
     <RazorCompileOnPublish>false</RazorCompileOnPublish>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- Disable null checks -->
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
 </Project>

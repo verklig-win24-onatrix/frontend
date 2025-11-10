@@ -1,8 +1,16 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+
 @{
   var content = (ContentModels.AboutCallbackSection)Model.Content;
   var settings = Model.Settings as ContentModels.AboutCallbackSettings;
+  var options = settings.CallbackRequestOptions;
+
+  var formViewModel = new CallbackFormViewModel
+  {
+    Options = settings?.CallbackRequestOptions ?? []
+  };
 
   var sectionColor = settings?.BackgroundColor?.Color ?? string.Empty;
   var sectionColorStyle = !string.IsNullOrEmpty(sectionColor)
@@ -28,5 +36,20 @@
       </div>
 
     </div>
+
+    <div class="callback-form">
+
+      <div class="callback-form-title">
+        <h2>@content.AboutCallbackFormTitle</h2>
+      </div>
+
+      <div class="callback-form-body">
+        <p>@content.AboutCallbackFormDescription</p>
+      </div>
+
+      <partial name="Partials/Forms/_CallbackForm" model="formViewModel" />
+
+    </div>
+
   </div>
 </section>
