@@ -1,0 +1,18 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
+@{
+	var content = (ContentModels.HelpCard)Model.Content;
+	var formViewModel = new HelpFormViewModel();
+}
+
+<div class="help-card">
+
+	<h2>@content.HelpTitle</h2>
+	<p>@content.HelpDescription</p>
+
+	<partial name="Partials/Forms/_HelpForm" model="formViewModel" />
+
+	<img src="@content.HelpImage.Url()" />
+
+</div>

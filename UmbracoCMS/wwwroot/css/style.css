@@ -960,7 +960,7 @@ header {
 
   .flex {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   h2 {
@@ -973,6 +973,92 @@ header {
   p {
     color: var(--color-text);
     font-size: 14px;
+  }
+}
+
+.help-card {
+  background-color: var(--color-main);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  position: relative;
+
+  h2 {
+    color: var(--color-sub-primary);
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+
+  p {
+    color: var(--color-surface-primary);
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 2rem;
+  }
+
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 164px;
+    height: 123px;
+    pointer-events: none;
+  }
+
+  .input-field {
+    appearance: none;
+    font-family: var(--font);
+    width: 100%;
+    padding: 1rem 54px 1rem 1rem;
+    border: var(--color-border) 1px solid;
+    border-radius: 4px;
+    transition: border-color 300ms ease-in-out;
+    z-index: 99;
+
+    &:focus {
+      border-color: var(--color-note);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--color-note);
+      font-style: italic;
+    }
+  }
+
+  .input-div {
+    position: relative;
+  }
+
+  .form-btn {
+    color: var(--color-text);
+    background-color: transparent;
+    font-family: var(--font);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+  }
+
+  .form-error,
+  .form-success {
+    margin-top: 1.5rem;
+  }
+
+  .fa-envelope {
+    pointer-events: none;
+    font-size: 20px;
+    color: var(--color-text);
   }
 }
 
@@ -1079,7 +1165,7 @@ header {
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
-      border-radius: 3px;
+      border-radius: 4px;
       cursor: pointer;
       padding: .75rem 2.5rem;
       outline: none;
