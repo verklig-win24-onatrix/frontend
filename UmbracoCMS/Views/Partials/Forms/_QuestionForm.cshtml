@@ -1,0 +1,46 @@
+@using UmbracoCMS.ViewModels
+@model QuestionFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleQuestionForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "questionForm"}))
+{
+  <div class="form">
+
+    <div class="grid">
+      <div>
+        <label asp-for="Name" class="hidden"></label>
+        <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" class="input-field" />
+        <span asp-validation-for="Name"></span>
+      </div>
+
+      <div>
+        <label asp-for="Email" class="hidden"></label>
+        <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="input-field" />
+        <span asp-validation-for="Email"></span>
+      </div>
+    </div>
+
+    <div>
+      <label asp-for="Question" class="hidden"></label>
+      <textarea asp-for="Question" type="text" placeholder="@Html.DisplayNameFor(x => x.Question)" class="input-area"></textarea>
+      <span asp-validation-for="Question"></span>
+    </div>
+
+    <button type="submit" class="form-btn">Submit</button>
+
+    @if (TempData["FormError"] != null)
+    {
+      <div class="form-error">
+        @TempData["FormError"]
+      </div>
+    }
+    else if (TempData["FormSuccess"] != null)
+    {
+      <div class="form-success">
+        @TempData["FormSuccess"]
+      </div>
+    }
+
+    <div></div>
+
+  </div>
+}
