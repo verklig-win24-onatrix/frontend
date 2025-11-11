@@ -1,0 +1,35 @@
+@using UmbracoCMS.ViewModels
+@model HelpFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleHelpForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "helpForm"}))
+{
+  <div class="form">
+
+    <div class="input-div">
+      <label asp-for="Email" class="hidden"></label>
+      <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="input-field" />
+
+      <button type="submit" class="form-btn">
+        <i class="fa-regular fa-envelope"></i>
+      </button>
+    </div>
+
+    <span asp-validation-for="Email"></span>
+
+    @if (TempData["FormError"] != null)
+    {
+      <div class="form-error">
+        @TempData["FormError"]
+      </div>
+    }
+    else if (TempData["FormSuccess"] != null)
+    {
+      <div class="form-success">
+        @TempData["FormSuccess"]
+      </div>
+    }
+
+    <div></div>
+
+  </div>
+}

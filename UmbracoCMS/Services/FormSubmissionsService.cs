@@ -11,7 +11,7 @@ public class FormSubmissionsService(IContentService contentService)
   {
     try
     {
-      var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "formSubmissions");
+      var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "callbackSubmissions");
       if (container == null)
       {
         return false;
@@ -24,6 +24,30 @@ public class FormSubmissionsService(IContentService contentService)
       request.SetValue("callbackRequestEmail", model.Email);
       request.SetValue("callbackRequestPhone", model.Phone);
       request.SetValue("callbackRequestOption", model.SelectedOption);
+
+      var saveResult = _contentService.Save(request);
+      return saveResult.Success;
+    }
+    catch
+    {
+      return false;
+    }
+  }
+
+  public bool SaveHelpRequest(HelpFormViewModel model)
+  {
+    try
+    {
+      var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "helpSubmissions");
+      if (container == null)
+      {
+        return false;
+      }
+
+      var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.Email}";
+      var request = _contentService.Create(requestName, container, "helpRequest");
+
+      request.SetValue("helpRequestEmail", model.Email);
 
       var saveResult = _contentService.Save(request);
       return saveResult.Success;

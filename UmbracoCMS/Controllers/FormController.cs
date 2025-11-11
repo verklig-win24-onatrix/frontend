@@ -32,4 +32,22 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
     TempData["FormSuccess"] = "Thank you for your request! We will get back to you soon.";
     return RedirectToCurrentUmbracoPage();
   }
+
+  public IActionResult HandleHelpForm(HelpFormViewModel model)
+  {
+    if (!ModelState.IsValid)
+    {
+      return CurrentUmbracoPage();
+    }
+
+    var result = _formSubmissionsService.SaveHelpRequest(model);
+    if (!result)
+    {
+      TempData["FormError"] = "Something went wrong while processing your request. Please try again later.";
+      return RedirectToCurrentUmbracoPage();
+    }
+
+    TempData["FormSuccess"] = "Thank you for your request! We will get back to you soon.";
+    return RedirectToCurrentUmbracoPage();
+  }
 }
