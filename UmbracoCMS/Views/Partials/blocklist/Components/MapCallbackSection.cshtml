@@ -1,13 +1,42 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS.ViewModels
 @{
   var content = (ContentModels.MapCallbackSection)Model.Content;
+  var settings = Model.Settings as ContentModels.MapCallbackSettings;
+  var options = settings.CallbackRequestOptions;
+
+  var formViewModel = new CallbackFormViewModel
+  {
+    Options = settings?.CallbackRequestOptions ?? []
+  };
 }
 
 <section class="map-callback-section">
 
   <div class="background-image">
     <img src="@content.MapCallbackBackgroundImage.Url()" />
+  </div>
+
+  <div class="callback-form">
+    <div class="container">
+
+      <div class="callback-form-label">
+        <h2>@content.MapCallbackFormLabel</h2>
+      </div>
+
+      <div class="callback-form-title">
+        <span>@content.MapCallbackFormTitle</span>
+      </div>
+
+      <div class="callback-form-body">
+        <p>@content.MapCallbackFormDescription</p>
+      </div>
+      
+    </div>
+
+    <partial name="Partials/Forms/_CallbackForm" model="formViewModel" />
+
   </div>
 
 </section>

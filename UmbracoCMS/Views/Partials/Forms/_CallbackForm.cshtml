@@ -44,9 +44,7 @@
       <span asp-validation-for="SelectedOption"></span>
     </div>
 
-    <div>
-      <button type="submit" class="form-btn">Submit</button>
-    </div>
+    <button type="submit" class="form-btn">Submit</button>
 
     @if (TempData["FormError"] != null)
     {
@@ -60,6 +58,8 @@
         @TempData["FormSuccess"]
       </div>
     }
+
+    <div></div>
 
   </div>
 }

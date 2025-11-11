@@ -112,6 +112,8 @@ body {
 .field-validation-error {
   font-size: 14px !important;
   color: var(--color-validation-error) !important;
+  line-height: 2rem !important;
+  font-weight: 500 !important;
 }
 
 .form-error {
@@ -728,9 +730,85 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .map-callback-section {
+  position: relative;
+  margin-bottom: 104px;
+
   .background-image {
-    width: 1920px;
+    width: auto;
     height: 748px;
+  }
+
+  .callback-form {
+    width: 1100px;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 19rem;
+
+    .container {
+      width: 550px;
+      height: min-content;
+      justify-self: center;
+      padding-top: 4rem;
+    }
+
+    .callback-form-title {
+      background-color: var(--color-surface-primary);
+      padding: 0;
+    }
+
+    .field-validation-error {
+      text-align: start;
+    }
+
+    h2 {
+      color: var(--color-sub-secondary);
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: .5rem;
+    }
+
+    span {
+      color: var(--color-main);
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+      line-height: 3rem;
+    }
+
+    p {
+      color: var(--color-text);
+      font-size: 14px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 4rem;
+
+      .form-btn {
+        color: var(--color-sub-primary);
+        background-color: var(--color-main);
+        font-weight: 600;
+        width: 140px;
+        justify-self: center;
+        grid-column: 1 / -1;
+      }
+
+      .form-error,
+      .form-success {
+        grid-column: 1 / -1;
+        text-align: center;
+      }
+
+      div:last-child {
+        margin-bottom: 2.75rem;
+      }
+    }
   }
 }
 
@@ -906,10 +984,12 @@ header {
   top: -80px;
   box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
+  border-radius: 4px;
 
   .callback-form-title {
     background-color: var(--color-main);
     padding: 1.75rem;
+    border-radius: 4px 4px 0 0;
   }
 
   .callback-form-body {
@@ -937,7 +1017,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding: 0 1.75rem 2rem 1.75rem;
+    padding: 0 1.75rem .75rem 1.75rem;
 
     .input-field {
       appearance: none;
@@ -945,6 +1025,7 @@ header {
       width: 100%;
       padding: 1rem;
       border: var(--color-border) 1px solid;
+      border-radius: 4px;
       transition: border-color 300ms ease-in-out;
 
       &:focus {
@@ -980,8 +1061,10 @@ header {
       width: 100%;
       padding: 1rem;
       border: var(--color-border) 1px solid;
+      border-radius: 4px;
       transition: border-color 300ms ease-in-out;
       color: var(--color-text);
+      height: 54px;
 
       &:focus {
         border-color: var(--color-note);
