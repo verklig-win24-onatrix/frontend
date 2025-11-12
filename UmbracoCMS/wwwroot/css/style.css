@@ -939,6 +939,11 @@ header {
     flex-shrink: 0;
   }
 
+  .logo-small {
+    visibility: hidden;
+    display: none;
+  }
+
   .nav-list {
     list-style: none;
     gap: 75px;
@@ -987,6 +992,7 @@ header {
     margin: 0;
     padding: 0;
     font-size: 14px;
+    z-index: 99;
 
     a {
       color: var(--color-main);
@@ -1019,6 +1025,8 @@ header {
     position: absolute;
     width: auto;
     height: auto;
+    z-index: 0;
+    pointer-events: none;
 
     &.globe-left {
       left: 0;
@@ -1251,5 +1259,151 @@ header {
       outline: none;
       border: none;
     }
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 1549px) {
+  header {
+    .logo-small {
+      visibility: visible;
+      display: block;
+    }
+
+    .logo-big {
+      visibility: hidden;
+      display: none;
+    }
+
+    .fa-magnifying-glass {
+      margin-left: 21.5px;
+    }
+  }
+}
+
+@media (max-width: 1399px) {
+  header {
+    .logo-small {
+      visibility: hidden;
+      display: none;
+    }
+
+    .logo-big {
+      visibility: visible;
+      display: block;
+    }
+
+    .nav-list {
+      &.flex {
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+
+    .fa-magnifying-glass {
+      margin-left: 122.5px;
+    }
+  }
+
+  .banner {
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  .wrapper {
+    padding: 0 200px 0 200px;
+  }
+}
+
+@media (max-width: 1109px) {
+  header {
+    .logo-small {
+      visibility: visible;
+      display: block;
+    }
+
+    .logo-big {
+      visibility: hidden;
+      display: none;
+    }
+
+    .fa-magnifying-glass {
+      margin-left: 21.5px;
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .topbar {
+    .wrapper {
+      padding: 0 0 0 1rem;
+    }
+  }
+
+  header {
+    .logo {
+      width: 145px;
+      height: 44px;
+      margin-top: 1.5rem;
+    }
+
+    .logo-small {
+      visibility: hidden;
+      display: none;
+    }
+
+    .logo-big {
+      visibility: visible;
+      display: block;
+    }
+
+    .fa-magnifying-glass {
+      margin-left: 122.5px;
+      margin-top: 36px;
+    }
+
+    .nav-list {
+      &.flex {
+        flex-direction: column;
+      }
+    }
+
+    .flex {
+      align-items: initial;
+    }
+  }
+
+  .wrapper {
+    padding: 0 100px 0 100px;
+  }
+}
+
+@media (max-width: 649px) {
+  header {
+    .logo {
+      width: 44px;
+      height: 44px;
+    }
+
+    .logo-small {
+      visibility: visible;
+      display: block;
+    }
+
+    .logo-big {
+      visibility: hidden;
+      display: none;
+    }
+
+    .fa-magnifying-glass {
+      margin-left: 21.5px;
+    }
+  }
+
+  .wrapper {
+    padding: 0 1.5rem;
   }
 }

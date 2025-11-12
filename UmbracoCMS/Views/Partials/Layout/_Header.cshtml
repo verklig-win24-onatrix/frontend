@@ -15,6 +15,7 @@
   var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
 
   var logo = siteSettings.SiteLogo;
+  var logoSmall = siteSettings.SiteLogoSmall;
   var selection = Model.Root().Children().Where(x => x.IsVisible()).ToArray();
 }
 
@@ -24,7 +25,8 @@
     @if (logo != null)
     {
       <a href="/" class="logo flex">
-        <img src="@logo.Url()" alt="Onatrix">
+        <img class="logo-big" src="@logo.Url()" alt="Onatrix">
+        <img class="logo-small" src="@logoSmall.Url()" alt="Onatrix">
       </a>
     }
     else
