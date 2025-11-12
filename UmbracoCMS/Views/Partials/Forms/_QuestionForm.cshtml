@@ -7,15 +7,15 @@
 
     <div class="grid">
       <div>
-        <label asp-for="Name" class="hidden"></label>
-        <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" class="input-field" />
-        <span asp-validation-for="Name"></span>
+        <label asp-for="QuestionName" class="hidden"></label>
+        <input asp-for="QuestionName" type="text" placeholder="@Html.DisplayNameFor(x => x.QuestionName)" class="input-field" />
+        <span asp-validation-for="QuestionName"></span>
       </div>
 
       <div>
-        <label asp-for="Email" class="hidden"></label>
-        <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="input-field" />
-        <span asp-validation-for="Email"></span>
+        <label asp-for="QuestionEmail" class="hidden"></label>
+        <input asp-for="QuestionEmail" type="text" placeholder="@Html.DisplayNameFor(x => x.QuestionEmail)" class="input-field" />
+        <span asp-validation-for="QuestionEmail"></span>
       </div>
     </div>
 
@@ -27,16 +27,16 @@
 
     <button type="submit" class="form-btn">Submit</button>
 
-    @if (TempData["FormError"] != null)
+    @if (TempData["QuestionFormError"] != null)
     {
       <div class="form-error">
-        @TempData["FormError"]
+        @TempData["QuestionFormError"]
       </div>
     }
-    else if (TempData["FormSuccess"] != null)
+    else if (TempData["QuestionFormSuccess"] != null)
     {
       <div class="form-success">
-        @TempData["FormSuccess"]
+        @TempData["QuestionFormSuccess"]
       </div>
     }
 

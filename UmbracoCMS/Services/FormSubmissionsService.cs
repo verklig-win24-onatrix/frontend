@@ -68,11 +68,11 @@ public class FormSubmissionsService(IContentService contentService)
         return false;
       }
 
-      var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.Name}";
+      var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.QuestionName}";
       var request = _contentService.Create(requestName, container, "questionRequest");
 
-      request.SetValue("questionRequestName", model.Name);
-      request.SetValue("questionRequestEmail", model.Email);
+      request.SetValue("questionRequestName", model.QuestionName);
+      request.SetValue("questionRequestEmail", model.QuestionEmail);
       request.SetValue("questionRequestText", model.Question);
 
       var saveResult = _contentService.Save(request);

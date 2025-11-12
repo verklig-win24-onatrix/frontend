@@ -25,11 +25,11 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
     var result = _formSubmissionsService.SaveCallbackRequest(model);
     if (!result)
     {
-      TempData["FormError"] = "Something went wrong while processing your request. Please try again later.";
+      TempData["CallbackFormError"] = "Something went wrong while processing your request. Please try again later.";
       return RedirectToCurrentUmbracoPage();
     }
 
-    TempData["FormSuccess"] = "Thank you for your request! We will get back to you soon.";
+    TempData["CallbackFormSuccess"] = "Thank you for your request! We will get back to you soon.";
     return RedirectToCurrentUmbracoPage();
   }
 
@@ -43,11 +43,11 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
     var result = _formSubmissionsService.SaveHelpRequest(model);
     if (!result)
     {
-      TempData["FormError"] = "Something went wrong while processing your request. Please try again later.";
+      TempData["HelpFormError"] = "Something went wrong while processing your request. Please try again later.";
       return RedirectToCurrentUmbracoPage();
     }
 
-    TempData["FormSuccess"] = "Thank you for your request! We will get back to you soon.";
+    TempData["HelpFormSuccess"] = "Thank you for your request! We will get back to you soon.";
     return RedirectToCurrentUmbracoPage();
   }
 
@@ -61,11 +61,11 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
     var result = _formSubmissionsService.SaveQuestionRequest(model);
     if (!result)
     {
-      TempData["FormError"] = "Something went wrong while processing your request. Please try again later.";
+      TempData["QuestionFormError"] = "Something went wrong while processing your request. Please try again later.";
       return RedirectToCurrentUmbracoPage();
     }
 
-    TempData["FormSuccess"] = "Thank you for your request! We will get back to you soon.";
+    TempData["QuestionFormSuccess"] = "Thank you for your request! We will get back to you soon.";
     return RedirectToCurrentUmbracoPage();
   }
 }

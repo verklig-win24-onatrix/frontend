@@ -46,16 +46,16 @@
 
     <button type="submit" class="form-btn">Submit</button>
 
-    @if (TempData["FormError"] != null)
+    @if (TempData["CallbackFormError"] != null)
     {
       <div class="form-error">
-        @TempData["FormError"]
+        @TempData["CallbackFormError"]
       </div>
     }
-    else if (TempData["FormSuccess"] != null)
+    else if (TempData["CallbackFormSuccess"] != null)
     {
       <div class="form-success">
-        @TempData["FormSuccess"]
+        @TempData["CallbackFormSuccess"]
       </div>
     }
 
