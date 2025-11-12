@@ -16,16 +16,16 @@
 
     <span asp-validation-for="Email"></span>
 
-    @if (TempData["FormError"] != null)
+    @if (TempData["HelpFormError"] != null)
     {
       <div class="form-error">
-        @TempData["FormError"]
+        @TempData["HelpFormError"]
       </div>
     }
-    else if (TempData["FormSuccess"] != null)
+    else if (TempData["HelpFormSuccess"] != null)
     {
       <div class="form-success">
-        @TempData["FormSuccess"]
+        @TempData["HelpFormSuccess"]
       </div>
     }
 

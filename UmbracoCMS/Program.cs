@@ -1,4 +1,3 @@
-using Lucene.Net.Util.Fst;
 using UmbracoCMS.Services;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
