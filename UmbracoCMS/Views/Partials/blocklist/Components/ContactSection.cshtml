@@ -14,45 +14,41 @@
 }
 
 <section class="contact-section" style="@sectionColorStyle">
-	<div class="wrapper">
+	<div class="flex">
 
-			<div class="flex">
+		<div class="background-images">
+			<img class="background-graphic" src="@content.ContactBackgroundGraphic.Url()" />
+			<img class="background-person" src="@content.ContactBackgroundPerson.Url()" />
+		</div>
 
-				<div class="background-images">
-					<img class="background-graphic" src="@content.ContactBackgroundGraphic.Url()" />
-					<img class="background-person" src="@content.ContactBackgroundPerson.Url()" />
+		<div class="container">
+			<h2>@content.ContactTitle</h2>
+
+			<div>
+				<div>
+					<i class="fa-solid fa-location-dot"></i>
+					<span>Office location</span>
 				</div>
-
-				<div class="container">
-					<h2>@content.ContactTitle</h2>
-
-					<div>
-						<div>
-							<i class="fa-solid fa-location-dot"></i>
-							<span>Office location</span>
-						</div>
-						<p class="address">@siteSettings.ContactAddress</p>
-					</div>
-
-					<div>
-						<div>
-							<i class="fa-solid fa-phone-flip"></i>
-							<span>Phone number</span>
-						</div>
-						<p class="phone">@siteSettings.ContactPhone</p>
-					</div>
-
-					<div>
-						<div>
-							<i class="fa-solid fa-envelope"></i>
-							<span>E-mail address</span>
-						</div>
-						<p class="email">@siteSettings.ContactEmail</p>
-					</div>
-
-				</div>
-
+				<p class="address">@siteSettings.ContactAddress</p>
 			</div>
+
+			<div>
+				<div>
+					<i class="fa-solid fa-phone-flip"></i>
+					<span>Phone number</span>
+				</div>
+				<p class="phone">@siteSettings.ContactPhone</p>
+			</div>
+
+			<div>
+				<div>
+					<i class="fa-solid fa-envelope"></i>
+					<span>E-mail address</span>
+				</div>
+				<p class="email">@siteSettings.ContactEmail</p>
+			</div>
+
+		</div>
 
 	</div>
 </section>

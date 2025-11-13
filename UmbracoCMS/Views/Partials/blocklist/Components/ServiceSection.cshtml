@@ -17,37 +17,35 @@
 }
 
 <section class="service-section" style="@sectionColorStyle">
-  <div class="wrapper">
 
-    <div class="flex">
-      @if (settings.ShowLabel)
+  <div class="flex">
+    @if (settings.ShowLabel)
+    {
+      <h2>@content.ServiceLabel</h2>
+    }
+    <div class="rte">@Html.Raw(content.ServiceTitle)</div>
+  </div>
+
+  <div class="grid">
+
+    @if (items.Any())
+    {
+      foreach(var item in items)
       {
-        <h2>@content.ServiceLabel</h2>
+        <div class="service-card">
+          <a href="@item.Url()">
+            <h4>@item.Name</h4>
+            <img src="@item.ServiceDetailThumbnail.Url()" />
+            <p>@item.ServiceDetailExcerpt</p>
+          </a>
+        </div>
       }
-      <div class="rte">@Html.Raw(content.ServiceTitle)</div>
-    </div>
-
-    <div class="grid">
-
-      @if (items.Any())
-      {
-        foreach(var item in items)
-        {
-          <div class="service-card">
-            <a href="@item.Url()">
-              <h4>@item.Name</h4>
-              <img src="@item.ServiceDetailThumbnail.Url()" />
-              <p>@item.ServiceDetailExcerpt</p>
-            </a>
-          </div>
-        }
-      }
-      else
-      {
-        <p>No Services Available</p>
-      }
-
-    </div>
+    }
+    else
+    {
+      <p>No Services Available</p>
+    }
 
   </div>
+  
 </section>

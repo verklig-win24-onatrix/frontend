@@ -11,17 +11,15 @@
 }
 
 <section class="our-story-section" style="@sectionColorStyle">
-  <div class="wrapper">
-    <div class="flex">
+  <div class="flex">
 
-      <div class="rte">@Html.Raw(content.OurStoryBody)</div>
+    <div class="rte">@Html.Raw(content.OurStoryBody)</div>
 
-      <a class="btn" href="@content.OurStoryLink.Url">@content.OurStoryLink.Name</a>
+    <a class="btn" href="@content.OurStoryLink.Url">@content.OurStoryLink.Name</a>
 
-      <img class="globe" src="@content.OurStoryBackgroundImage1.Url()" />
+    <img class="globe" src="@content.OurStoryBackgroundImage1.Url()" />
 
-      <img class="people" src="@content.OurStoryBackgroundImage2.Url()" />
+    <img class="people" src="@content.OurStoryBackgroundImage2.Url()" />
 
-    </div>
   </div>
 </section>
