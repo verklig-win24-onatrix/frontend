@@ -355,8 +355,10 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    justify-self: center;
     gap: 1rem;
     margin-top: 3rem;
+    max-width: 1000px;
 
     .member-card-big {
       flex: 1 1 calc((100% - 2rem) / 3);
@@ -1294,6 +1296,12 @@ header {
       margin-left: 21.5px;
     }
   }
+
+  .service-detail-section {
+    .wrapper {
+      padding: 0 200px;
+    }
+  }
 }
 
 @media (max-width: 1399px) {
@@ -1402,6 +1410,59 @@ header {
       top: 30rem;
       left: 50%;
       transform: translateX(-50%);
+      width: 700px;
+    }
+  }
+
+  .team-section {
+    .container {
+      .member-card-big {
+        flex: 1 1 calc((100% - 2rem) / 2);
+      }
+
+      .member-card-small {
+        flex: 1 1 calc((100% - 2rem) / 2);
+
+        h4 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .contact-section {
+    .container {
+      padding: 5rem 0 4rem 7rem;
+    }
+
+    .background-images {
+      width: 400px;
+
+      .background-graphic {
+        width: 400px;
+        height: 378px;
+      }
+
+      .background-person {
+        width: 306px;
+        height: 426px;
+      }
+    }
+  }
+
+  .map-callback-section {
+    .callback-form {
+      width: 900px;
+    }
+  }
+
+  .service-detail-section {
+    .wrapper {
+      padding: 0 100px;
     }
   }
 
@@ -1438,6 +1499,59 @@ header {
       flex-direction: column;
       align-items: center;
       gap: 2rem;
+    }
+  }
+
+  .team-section {
+    .wrapper {
+      padding: 0 200px;
+    }
+  }
+
+  .contact-section {
+    .container {
+      padding: 5rem 0 4rem 3rem;
+      width: 350px;
+
+      h2 {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .map-callback-section {
+    .callback-form {
+      width: 600px;
+    }
+  }
+
+  .service-detail-section {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .divider {
+      display: none;
+      visibility: hidden;
+    }
+
+    aside {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 3remÖ;
+
+      h2 {
+        align-self: initial;
+      }
+    }
+
+    .info-card {
+      width: 330px;
+    }
+
+    .help-card {
+      width: 330px;
     }
   }
 }
@@ -1501,6 +1615,62 @@ header {
     }
   }
 
+  .review-section {
+    .image {
+      width: 500px;
+    }
+  }
+
+  .team-section {
+    .container {
+      .member-card-big {
+        flex: 1 1 calc((100% - 2rem) / 1);
+      }
+
+      .member-card-small {
+        flex: 1 1 calc((100% - 2rem) / 1);
+      }
+    }
+  }
+
+  .contact-section {
+    padding: 4rem 0 24rem 0;
+    position: relative;
+
+    .container {
+      padding: 0;
+      width: 330px;
+      text-align: center;
+
+      p {
+        margin: .25rem 0 2rem 0;
+      }
+    }
+
+    .flex {
+      flex-direction: column;
+    }
+
+    .background-images {
+      position: absolute;
+      bottom: 0;
+      width: 330px;
+      align-self: center;
+
+      .background-graphic {
+        position: absolute;
+        bottom: 0;
+        width: 330px;
+        height: 312px;
+      }
+
+      .background-person {
+        width: 252px;
+        height: 351px;
+      }
+    }
+  }
+
   .wrapper {
     padding: 0 100px 0 100px;
   }
@@ -1544,15 +1714,98 @@ header {
     }
   }
 
+  .about-founder-section {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .profile {
+      img {
+        width: 330px;
+      }
+    }
+
+    .container {
+      width: 330px;
+    }
+  }
+
+  .review-section {
+    height: 700px;
+
+    .container {
+      width: 330px;
+
+      .text-main {
+        line-height: 4rem;
+      }
+    }
+
+    .image {
+      top: 40rem;
+      width: 330px;
+    }
+  }
+
+  .team-section {
+    .wrapper {
+      padding: 0 100px;
+    }
+  }
+
+  .map-callback-section {
+    margin-bottom: 400px;
+
+    .callback-form {
+      width: 330px;
+
+      .form {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        width: 280px;
+        justify-content: center;
+      }
+
+      .callback-form-label {
+        width: 280px;
+      }
+
+      .callback-form-title {
+        width: 280px;
+
+        span {
+          font-size: 30px;
+        }
+      }
+
+      .callback-form-body {
+        width: 280px;
+      }
+    }
+  }
+
   .wrapper {
     padding: 0 1.5rem;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 399px) {
   .brands-section {
     .container {
       grid-template-columns: min-content;
+    }
+  }
+
+  .callback-form {
+    width: 330px;
+    top: -42rem;
+  }
+
+  .service-section {
+    .service-card {
+      width: 330px;
     }
   }
 }
